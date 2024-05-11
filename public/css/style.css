@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 10px;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 290px;
+}
+.logo-text{
+    font-family: "Cormorant", serif;
+    font-size: 50px;
+    font-weight: 600;
+    color: #52600A;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+}
+@font-face {
+    font-family: SF Pro; /* Имя шрифта */
+    src: url(public/css/SF.otf); /* Путь к файлу со шрифтом */
+   }
+.nav-item{
+    font-family: SF Pro, sans-serif;
+    font-size: 20px;
+    color: #52600A;
+    text-decoration: none;
+}
+.nav-item:hover{
+    border-bottom: solid 3px #D1A481;
+    transition: ease .3s;
+    color: #52600A;
+    text-decoration: none;
+}
+.nav-item-active{
+    font-family: SF Pro, sans-serif;
+    font-size: 20px;
+    border-bottom: solid 3px #D1A481;
+    color: #52600A;
+    text-decoration: none;
+}
+.nav-item-active:hover{
+    font-family: SF Pro, sans-serif;
+    font-size: 20px;
+    border-bottom: solid 3px #D1A481;
+    color: #52600A;
+    text-decoration: none;
+}
+.line{
+size: 3px;  
+border: none;
+border-top: solid 3px #D1A481; 
+opacity: 9;
+margin: 0;
+}
+main{
+    background-image: url(background.png);
+background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+height: 1024px;
+display: flex;
+flex-direction: column;
+}
+.block-aboutus{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 40px;
+}
+.text-aboutus{
+    font-family: SF Pro, sans-serif;
+    font-size: 30px;
+    color: #52600A;
+    text-decoration: none;
+    
+}
+.block-text-aboutus{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 700px;
+    height: 400px;
+}
+.block-products{
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+}
+.products-main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.card{
+    height: 300px;
+}
+.btn1{
+    width: 100px;
+    height: 50px;
+    border-radius:30px;
+    background-color: #52600A;
+    color: #D1A481;
+    font-family: SF Pro, sans-serif;
+    font-size: 20px;
+    border: none;
+}
+.product-main{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+.product-title{
+    font-family: SF Pro, sans-serif;
+    font-size: 40px;
+    color: #52600A;
+}
+.product-desc{
+    font-family: SF Pro, sans-serif;
+    font-size: 30px;
+    color: #52600A;
+}
+.square{
+    height: 400px;
+    width: 400px;
+    background-color:#CB7287;
+}
