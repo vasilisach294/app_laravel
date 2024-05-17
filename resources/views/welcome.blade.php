@@ -16,27 +16,28 @@
                         </div>
                         @if (Route::has('login'))
                             <nav>
+                              {{-- <a class="nav-link" href="{{ route('cart.show') }}" tabindex="-1" aria-disabled="true">Корзина</a> --}}
                                 <a href="/" class="nav-item-active">Главная</div>
                                 <a href="{{ route('products.store') }}" class="nav-item">Каталог</div>
                                 @auth
                                     <a
                                         href="{{ url('/dashboard') }}"
                                         class="nav-item">
-                                        Dashboard
+                                        Личный кабинет
                                     </a>
                                 @else
                                     <a
                                         href="{{ route('login') }}"
                                         class="nav-item"
                                     >
-                                        Log in
+                                        Вход
                                     </a>
 
                                     @if (Route::has('register'))
                                         <a
                                             href="{{ route('register') }}"
                                             class="nav-item">
-                                            Register
+                                            Регистрация
                                         </a>
                                     @endif
                                 @endauth

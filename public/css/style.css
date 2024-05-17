@@ -143,6 +143,7 @@ flex-direction: column;
     display: flex;
     flex-direction: column;
     margin-left: 50px;
+    justify-content: space-between;
 }
 .product-title{
     font-family: SF Pro, sans-serif;
@@ -151,11 +152,10 @@ flex-direction: column;
 }
 .product-desc{
     font-family: SF Pro, sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     color: #52600A;
 }
-.square{
-    height: 400px;
-    width: 400px;
-    background-color:#CB7287;
+.buttons{
+    display: flex;
+    justify-content: space-between;
 }

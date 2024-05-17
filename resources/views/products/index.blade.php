@@ -22,21 +22,21 @@
                     <a
                         href="{{ url('/dashboard') }}"
                         class="nav-item">
-                        Dashboard
+                        Личный кабинет
                     </a>
                 @else
                     <a
                         href="{{ route('login') }}"
                         class="nav-item"
                     >
-                        Log in
+                        Вход
                     </a>
 
                     @if (Route::has('register'))
                         <a
                             href="{{ route('register') }}"
                             class="nav-item">
-                            Register
+                            Регистрация
                         </a>
                     @endif
                 @endauth
@@ -51,18 +51,20 @@
     </form>
     <div class="products-main">
 @foreach ($products as $product)
-    <div class="card" style="width: 18rem; margin-bottom:10px">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
+    <div class="card" style="width: 18rem; margin-bottom:30px; height:390px; border: solid 1px #D1A481">
+        <img src="{{asset('images/pic6.jpg')}}" class="card-img-top" alt="...">
+        <div class="card-body" style="border-top: solid 1px #D1A481">
           <h5 class="card-title">{{ $product->name }}</h5>
-          <p class="card-text">{{ $product->description }}</p>
-          <a href="{{ route('products.show', $product->id) }}" class="btn btn-success">Show</a>
+          <div class="buttons">
+                      <a href="{{ route('products.show', $product->id) }}" class="btn btn-success">Посмотреть</a>
           <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">Edit</a>
           <form action="{{ route('products.destroy', $product->id) }}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Delete</button>
         </form>
+
+          </div>
         </div>
       </div>
       @endforeach

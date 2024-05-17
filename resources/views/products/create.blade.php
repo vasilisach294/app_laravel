@@ -9,11 +9,28 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{ route('products.store') }}" method="post">
+    <header>
+        <div class="logo">
+            <div class="logo-text">Cozy Room</div>
+            <img src="{{asset('images/pic1.png')}}" alt="" height="45px" width="50px">
+        </div>
+    </header>
+<hr class="line">
+<main>
+    <div class="block-products">
+        <form action="{{ route('products.store') }}" method="post">
     @csrf
-        <input type="text" placeholder='Название' name="name">
-        <input type="text" placeholder='Описание' name="description">
-        <button type="submit">отправить</button>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Название продукта</label>
+        <input type="text" placeholder='Название' name="name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Название продукта</label>
+        <input type="text" placeholder='Описание' name="description" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Создать</button>
     </form>
+    </div>
+</main>
 </body>
 </html>

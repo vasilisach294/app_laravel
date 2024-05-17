@@ -45,32 +45,33 @@
         @endif
     </header>
 <hr class="line">
-<main>
-    <form action="{{ route('products.index') }}" style="padding-left: 100px; padding-top:10px">
-        <button class="btn1">Назад</button>
-    </form>
-    <div class="product-main">
-        <img src="{{asset('images/pic6.jpg')}}" alt="" height="400px" width="400px">
-        <div class="product">
-            <div class="product-title">{{ $product->name }}</div>
-            <div class="product-desc">{{ $product->description }}</div>
-            <a href="{{ route('products.edit', $product->id) }}">
-                <button class="btn btn-warning">Edit</button>
-            </a>
-            <form action="{{ route('products.destroy', $product->id) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
-            <form action="{{ route('cart.update') }}" method="POST">
-                @csrf
-                @method('PUT')
-                <input hidden value="{{ $product->id }}" name="product_id">
-                <button type="submit" class="btn btn-primary">Добавить в корзину</button>
-            </form>
-
-        </div>
+    <div class="container-sm justfify-content-center mt-2">
+        <form action="{{ route('orders.store') }}" method="POST">
+            @csrf
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($user->cart as $item)
+                        <tr>
+                            <th scope="row">{{ $item->id }}</th>
+                            <td>{{ $item->name }}</td>
+                            <td>
+                                <input value="{{ $item->pivot->amount }}" name="products[{{ $item->id }}][amount]">
+                            </td>   
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <input hidden value="1" name="user_id">
+            <input hidden value="0" name="status_id"> 
+            <button type="submit" class="btn btn-primary">Оформить заказ</button>
+        </form>
     </div>
-</main>
 </body>
 </html>

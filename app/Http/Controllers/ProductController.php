@@ -32,6 +32,7 @@ class ProductController extends Controller
         Product::create([
             "name"=> $request->name,
             "description"=> $request->description
+
         ]);
         return redirect()->route("products.index");
     }

@@ -16,24 +16,26 @@
             <img src="{{asset('images/pic1.png')}}" alt="" height="45px" width="50px">
         </div>
     </header>
-    <main>
-        <div class="block-products">
-           <div class='container-sm justfify-content-center mt-2'>
-        <form action="{{ route('products.update', $product->id) }}" method="POST">
+<hr class="line">
+    <h1>Создать заказ</h1>
+    <div class='container-sm justfify-content-center mt-2'>
+        <form action="{{ route('orders.store') }}" method="POST">
             @CSRF
-            @method('PUT')
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Product Name</label>
-                <input class="form-control" name="name" value="{{ $product->name }}">
+                <label for="exampleInputEmail1" class="form-label">Comment</label>
+                <input class="form-control" name="comment">
+                <input hidden value="1" name="user_id">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Description</label>
-                <input class="form-control" name="description" value="{{ $product->description }}">
+                <label for="exampleInputEmail1" class="form-label">Status</label>
+                <select class="form-select" aria-label="Default select example" name="status_id">
+                    @foreach ($statuses as $key => $value)
+                        <option value="{{ $key }}">{{ $value }}</option>
+                    @endforeach
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-        </div>
-    </main>
 </body>
 </html>
